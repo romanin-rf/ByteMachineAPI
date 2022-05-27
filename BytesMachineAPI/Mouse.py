@@ -12,7 +12,7 @@ __email__ = "energy.labs@yandex.ru"
 
 
 import unittest
-import byte_machine_graphics as bmg
+import Graphics as bmg
 
 
 class Mouse:

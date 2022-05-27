@@ -8,7 +8,7 @@ __version__ = "0.9137"
 __email__ = "energy.labs@yandex.ru"
 
 
-import byte_machine_paint as bmp
+import Paint as bmp
 import unittest
 
 

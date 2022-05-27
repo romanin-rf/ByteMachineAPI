@@ -12,7 +12,7 @@ __email__ = "energy.labs@yandex.ru"
 
 
 import unittest
-import byte_machine_graphics as bmg
+import Graphics as bmg
 
 
 class Designer:
@@ -25,8 +25,13 @@ class Designer:
         self.horz_scroll_pos = 0
         self.vert_scroll_pos = 0
 
-    def init(self, size: bmg.Size, viewport_size: bmg.Size,
-             horz_scroll_pos: int, vert_scroll_pos: int) -> None:
+    def init(
+        self,
+        size: bmg.Size,
+        viewport_size: bmg.Size,
+        horz_scroll_pos: int,
+        vert_scroll_pos: int
+    ) -> None:
         """Функция инициализации."""
         assert isinstance(size, bmg.Size)
         assert isinstance(viewport_size, bmg.Size)
@@ -38,8 +43,12 @@ class Designer:
         self.vert_scroll_pos = vert_scroll_pos
 
     @staticmethod
-    def create(size: bmg.Size, viewport_size: bmg.Size,
-               horz_scroll_pos: int, vert_scroll_pos: int) -> Designer:
+    def create(
+        size: bmg.Size,
+        viewport_size: bmg.Size,
+        horz_scroll_pos: int,
+        vert_scroll_pos: int
+    ) -> Designer:
         """Функция создания."""
         assert isinstance(size, bmg.Size)
         assert isinstance(viewport_size, bmg.Size)

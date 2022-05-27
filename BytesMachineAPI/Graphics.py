@@ -13,8 +13,8 @@ __email__ = "energy.labs@yandex.ru"
 
 import math
 import unittest
-import byte_machine_helper as bmh
-import byte_machine_convert as bmc
+import Helper as bmh
+import Convert as bmc
 
 
 class Color:
@@ -27,7 +27,7 @@ class Color:
         self.__b = 0
         self.__a = 255
 
-    def init(self, r: int, g: int, b: int, a: int = 255) -> None:
+    def init(self, r: int, g: int, b: int, a: int=255) -> None:
         """Функция инициализации."""
         assert isinstance(r, int)
         assert 0 <= r <= 255

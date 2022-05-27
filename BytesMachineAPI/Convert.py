@@ -81,8 +81,10 @@ def byte_array_to_int16(byte_array: bytearray,
     return r[0]
 
 
-def uint16_to_byte_array(value: int,
-                         is_little_endian: bool = True) -> bytearray:
+def uint16_to_byte_array(
+    value: int,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция переводит uint16 в bytearray."""
     # assert 0 <= value <= 65535
     if is_little_endian:
@@ -91,8 +93,10 @@ def uint16_to_byte_array(value: int,
         return bytearray(struct.pack('>H', value))
 
 
-def byte_array_to_uint16(byte_array: bytearray,
-                         is_little_endian: bool = True) -> int:
+def byte_array_to_uint16(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> int:
     """Функция переводит bytearray в int16."""
     # assert len(byte_array) == 2
     if is_little_endian:
@@ -102,8 +106,10 @@ def byte_array_to_uint16(byte_array: bytearray,
     return r[0]
 
 
-def int32_to_byte_array(value: int,
-                        is_little_endian: bool = True) -> bytearray:
+def int32_to_byte_array(
+    value: int,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция переводит int32 в bytearray."""
     # assert -2147483648 <= value <= 2147483647
     if is_little_endian:
@@ -123,8 +129,10 @@ def byte_array_to_int32(byte_array: bytearray,
     return r[0]
 
 
-def uint32_to_byte_array(value: int,
-                         is_little_endian: bool = True) -> bytearray:
+def uint32_to_byte_array(
+    value: int,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция переводит bytearray в uint32."""
     # assert 0 <= value <= 4294967295
     if is_little_endian:
@@ -133,8 +141,10 @@ def uint32_to_byte_array(value: int,
         return bytearray(struct.pack('>I', value))
 
 
-def byte_array_to_uint32(byte_array: bytearray,
-                         is_little_endian: bool = True) -> int:
+def byte_array_to_uint32(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> int:
     """Функция переводит список байтов в uint32."""
     # assert len(byte_array) == 4
     if is_little_endian:
@@ -144,8 +154,10 @@ def byte_array_to_uint32(byte_array: bytearray,
     return r[0]
 
 
-def int64_to_byte_array(value: int,
-                        is_little_endian: bool = True) -> bytearray:
+def int64_to_byte_array(
+    value: int,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция конвертации значения int64 в набор байтов."""
     # assert -9223372036854775808 <= value <= 9223372036854775807
     if is_little_endian:
@@ -154,8 +166,10 @@ def int64_to_byte_array(value: int,
         return bytearray(struct.pack('>q', value))
 
 
-def byte_array_to_int64(byte_array: bytearray,
-                        is_little_endian: bool = True) -> int:
+def byte_array_to_int64(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> int:
     """Функция переводит список байтов в int64."""
     # assert len(byte_array) == 8
     if is_little_endian:
@@ -165,8 +179,10 @@ def byte_array_to_int64(byte_array: bytearray,
     return r[0]
 
 
-def uint64_to_byte_array(value: int,
-                         is_little_endian: bool = True) -> bytearray:
+def uint64_to_byte_array(
+    value: int,
+    is_little_endian: bool=True
+) -> bytearray:
     """Конвертация uint64 в bytearray."""
     # assert 0 <= value <= 18446744073709551615
     if is_little_endian:
@@ -175,8 +191,10 @@ def uint64_to_byte_array(value: int,
         return bytearray(struct.pack('>Q', value))
 
 
-def byte_array_to_uint64(byte_array: bytearray,
-                         is_little_endian: bool = True) -> int:
+def byte_array_to_uint64(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> int:
     """Конвертация bytearray в int64."""
     # assert len(byte_array) == 8
     if is_little_endian:
@@ -186,8 +204,10 @@ def byte_array_to_uint64(byte_array: bytearray,
     return r[0]
 
 
-def float_to_byte_array(value: float,
-                        is_little_endian: bool = True) -> bytearray:
+def float_to_byte_array(
+    value: float,
+    is_little_endian: bool=True
+) -> bytearray:
     """Конвертация значения float в bytearray."""
     if is_little_endian:
         return bytearray(struct.pack('<f', value))
@@ -195,8 +215,10 @@ def float_to_byte_array(value: float,
         return bytearray(struct.pack('>f', value))
 
 
-def byte_array_to_float(byte_array: bytearray,
-                        is_little_endian: bool = True) -> float:
+def byte_array_to_float(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> float:
     """Конвертация bytearray во float."""
     # assert len(byte_array) == 4
     if is_little_endian:
@@ -206,8 +228,10 @@ def byte_array_to_float(byte_array: bytearray,
     return r[0]
 
 
-def double_to_byte_array(value: float,
-                         is_little_endian: bool = True) -> bytearray:
+def double_to_byte_array(
+    value: float,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует double в bytearray."""
     if is_little_endian:
         return bytearray(struct.pack('<d', value))
@@ -215,8 +239,10 @@ def double_to_byte_array(value: float,
         return bytearray(struct.pack('>d', value))
 
 
-def byte_array_to_double(byte_array: bytearray,
-                         is_little_endian: bool = True) -> float:
+def byte_array_to_double(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> float:
     """Функция преобразует bytearray в double."""
     # assert len(byte_array) == 8
     if is_little_endian:
@@ -272,8 +298,10 @@ def byte_array_to_uint8_list(byte_array: bytearray) -> list:
     return list(byte_array)
 
 
-def int16_list_to_byte_array(int16_list: list,
-                             is_little_endian: bool = True) -> bytearray:
+def int16_list_to_byte_array(
+    int16_list: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список int16 в byte_array."""
     ba = bytearray()
     for v in int16_list:
@@ -281,8 +309,10 @@ def int16_list_to_byte_array(int16_list: list,
     return ba
 
 
-def byte_array_to_int16_list(byte_array: bytearray,
-                             is_little_endian: bool = True) -> list:
+def byte_array_to_int16_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует bytearray в список int16."""
     type_size = 2
     vl = []
@@ -293,8 +323,10 @@ def byte_array_to_int16_list(byte_array: bytearray,
     return vl
 
 
-def uint16_list_to_byte_array(uint16_list: list,
-                              is_little_endian: bool = True) -> bytearray:
+def uint16_list_to_byte_array(
+    uint16_list: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint16 в bytearray."""
     ba = bytearray()
     for v in uint16_list:
@@ -302,8 +334,10 @@ def uint16_list_to_byte_array(uint16_list: list,
     return ba
 
 
-def byte_array_to_uint16_list(byte_array: bytearray,
-                              is_little_endian: bool = True) -> list:
+def byte_array_to_uint16_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует bytearray в список uint16."""
     type_size = 2
     vl = []
@@ -314,8 +348,10 @@ def byte_array_to_uint16_list(byte_array: bytearray,
     return vl
 
 
-def int32_list_to_byte_array(int32_list: list,
-                             is_little_endian: bool = True) -> bytearray:
+def int32_list_to_byte_array(
+    int32_list: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint32 в bytearray."""
     ba = bytearray()
     for v in int32_list:
@@ -323,8 +359,10 @@ def int32_list_to_byte_array(int32_list: list,
     return ba
 
 
-def byte_array_to_int32_list(byte_array: bytearray,
-                             is_little_endian: bool = True) -> list:
+def byte_array_to_int32_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует bytearray в список int32."""
     type_size = 4
     vl = []
@@ -335,8 +373,10 @@ def byte_array_to_int32_list(byte_array: bytearray,
     return vl
 
 
-def uint32_list_to_byte_array(int32_list: list,
-                              is_little_endian: bool = True) -> bytearray:
+def uint32_list_to_byte_array(
+    int32_list: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint16 в bytearray."""
     ba = bytearray()
     for v in int32_list:
@@ -344,8 +384,10 @@ def uint32_list_to_byte_array(int32_list: list,
     return ba
 
 
-def byte_array_to_uint32_list(byte_array: bytearray,
-                              is_little_endian: bool = True) -> list:
+def byte_array_to_uint32_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует bytearray в список uint32."""
     type_size = 4
     vl = []
@@ -356,8 +398,10 @@ def byte_array_to_uint32_list(byte_array: bytearray,
     return vl
 
 
-def int64_list_to_byte_array(uint64_array: list,
-                             is_little_endian: bool = True) -> bytearray:
+def int64_list_to_byte_array(
+    uint64_array: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint64 в список байтов."""
     ba = bytearray()
     for v in uint64_array:
@@ -365,8 +409,10 @@ def int64_list_to_byte_array(uint64_array: list,
     return ba
 
 
-def byte_array_to_int64_list(byte_array: bytearray,
-                             is_little_endian: bool = True) -> list:
+def byte_array_to_int64_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует список байтов в список uint64."""
     type_size = 8
     vl = []
@@ -377,8 +423,10 @@ def byte_array_to_int64_list(byte_array: bytearray,
     return vl
 
 
-def uint64_list_to_byte_array(uint64_array: list,
-                              is_little_endian: bool = True) -> bytearray:
+def uint64_list_to_byte_array(
+    uint64_array: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint64 в список байтов."""
     ba = bytearray()
     for v in uint64_array:
@@ -386,8 +434,10 @@ def uint64_list_to_byte_array(uint64_array: list,
     return ba
 
 
-def byte_array_to_uint64_list(byte_array: bytearray,
-                              is_little_endian: bool = True) -> list:
+def byte_array_to_uint64_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует список байтов в список uint64."""
     type_size = 8
     vl = []
@@ -398,8 +448,10 @@ def byte_array_to_uint64_list(byte_array: bytearray,
     return vl
 
 
-def float_list_to_byte_array(float_list: list,
-                             is_little_endian: bool = True) -> bytearray:
+def float_list_to_byte_array(
+    float_list: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint16 в bytearray."""
     ba = bytearray()
     for v in float_list:
@@ -407,8 +459,10 @@ def float_list_to_byte_array(float_list: list,
     return ba
 
 
-def byte_array_to_float_list(byte_array: [],
-                             is_little_endian: bool = True) -> list:
+def byte_array_to_float_list(
+    byte_array: list,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует список байтов в список float."""
     type_size = 4
     vl = []
@@ -419,8 +473,10 @@ def byte_array_to_float_list(byte_array: [],
     return vl
 
 
-def double_list_to_byte_array(double_list: list,
-                              is_little_endian: bool = True) -> bytearray:
+def double_list_to_byte_array(
+    double_list: list,
+    is_little_endian: bool=True
+) -> bytearray:
     """Функция преобразует список uint16 в bytearray."""
     ba = bytearray()
     for v in double_list:
@@ -428,11 +484,13 @@ def double_list_to_byte_array(double_list: list,
     return ba
 
 
-def byte_array_to_double_list(byte_array: bytearray,
-                              is_little_endian: bool = True) -> list:
+def byte_array_to_double_list(
+    byte_array: bytearray,
+    is_little_endian: bool=True
+) -> list:
     """Функция преобразует bytearray в список double."""
-    type_size = 8
-    vl = []
+    type_size, vl = 8, []
+
     for i in range(0, len(byte_array) - 1, type_size):
         ba = byte_array[i:i + type_size]
         v = byte_array_to_double(ba, is_little_endian)

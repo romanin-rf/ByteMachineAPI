@@ -12,8 +12,8 @@ __email__ = "energy.labs@yandex.ru"
 
 
 import unittest
-import byte_machine_graphics as bmg
-import byte_machine_helper as bmh
+import Graphics as bmg
+import Helper as bmh
 
 
 class Coefs:

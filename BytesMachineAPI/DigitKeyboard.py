@@ -4,6 +4,7 @@ ByteMachine.
 Состояние цифровой клавиатуры.
 """
 from __future__ import annotations
+from typing import Optional
 
 
 __author__ = "EnergyLabs"
@@ -17,22 +18,16 @@ import unittest
 class DigitKeyboard:
     """Состояние цифровой клавиатуры."""
 
-    def __init__(self):
+    def __init__(self, keys: Optional[bytearray()]=None):
         """Конструктор без параметров."""
-        self.keys = bytearray([0] * 10)
-
-    def init(self, keys: bytearray()) -> None:
-        """Функция инициализации."""
-        assert DigitKeyboard._check_byte_array(keys)
-        self.keys = keys
+        self.keys = keys or bytearray([0] * 10)
+        assert DigitKeyboard._check_byte_array(self.keys)
 
     @staticmethod
     def create(keys: bytearray) -> DigitKeyboard:
         """Функция создания."""
         assert DigitKeyboard._check_byte_array(keys)
-        dk = DigitKeyboard()
-        dk.init(keys)
-        return dk
+        return DigitKeyboard(keys)
 
     def check_byte_array(self, byte_array: bytearray) -> bool:
         """Проверка корректности массива байтов для инициализации."""

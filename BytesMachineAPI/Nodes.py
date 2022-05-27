@@ -30,8 +30,11 @@ def rand_generate(count: int) -> bytearray:
     return bytearray([random.randint(0, 255) for i in range(count)])
 
 
-def take(byte_array: bytearray, count: int,
-         is_begin: bool = True) -> bytearray:
+def take(
+    byte_array: bytearray,
+    count: int,
+    is_begin: bool=True
+) -> bytearray:
     """Получение определенного количества значений списка."""
     assert len(byte_array) >= count
     if is_begin:
@@ -40,8 +43,11 @@ def take(byte_array: bytearray, count: int,
         return byte_array[-count:]
 
 
-def take_while(byte_array: bytearray, value: int,
-               is_begin: bool = True) -> bytearray:
+def take_while(
+    byte_array: bytearray,
+    value: int,
+    is_begin: bool=True
+) -> bytearray:
     """Получение значений списка, совпадающих с value."""
     assert isinstance(value, int)
     assert 0 <= value <= 255
@@ -55,8 +61,11 @@ def take_while(byte_array: bytearray, value: int,
     return r
 
 
-def take_while_2(byte_array: bytearray, pred,
-                 is_begin: bool = True) -> bytearray:
+def take_while_2(
+    byte_array: bytearray,
+    pred,
+    is_begin: bool=True
+) -> bytearray:
     """Получение значений списка с предикатом func для проверки значений."""
     ba = byte_array if is_begin else reverse(byte_array)
     take_count = 0
@@ -68,8 +77,11 @@ def take_while_2(byte_array: bytearray, pred,
     return take(byte_array, take_count, is_begin)
 
 
-def skip(byte_array: bytearray, count: int,
-         is_begin: bool = True) -> bytearray:
+def skip(
+    byte_array: bytearray,
+    count: int,
+    is_begin: bool=True
+) -> bytearray:
     """Пропуск определенного количества значений списка."""
     assert len(byte_array) >= count
     if is_begin:
@@ -78,8 +90,11 @@ def skip(byte_array: bytearray, count: int,
         return byte_array[:-count]
 
 
-def skip_while(byte_array: bytearray, value: int,
-               is_begin: bool = True) -> bytearray:
+def skip_while(
+    byte_array: bytearray,
+    value: int,
+    is_begin: bool=True
+) -> bytearray:
     """Пропуск значений, равных value."""
     assert isinstance(value, int)
     assert 0 <= value <= 255
@@ -91,8 +106,11 @@ def skip_while(byte_array: bytearray, value: int,
     return skip(byte_array, skip_count, is_begin)
 
 
-def skip_while_2(byte_array: bytearray, pred,
-                 is_begin: bool = True) -> bytearray:
+def skip_while_2(
+    byte_array: bytearray,
+    pred,
+    is_begin: bool=True
+) -> bytearray:
     """Пропуск значений с предикатом func для проверки значений."""
     skip_count = 0
     ba = byte_array if is_begin else reverse(byte_array)

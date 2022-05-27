@@ -12,8 +12,8 @@ __email__ = "energy.labs@yandex.ru"
 
 
 import unittest
-import byte_machine_helper as bmh
-import byte_machine_graphics as bmg
+import Helper as bmh
+import Graphics as bmg
 
 
 class DrawOpCodes:
@@ -4465,7 +4465,7 @@ class TestDrawLinesOp(unittest.TestCase):
         self.assertTrue(op_1 != op_2)
 
     @staticmethod
-    def create_lines() -> []:
+    def create_lines() -> list:
         """Создание линий."""
         line = bmg.Line.create_2(100, 100, 200, 200)
         return [line] * 10
@@ -4648,7 +4648,7 @@ class TestDrawLinesfOp(unittest.TestCase):
         self.assertTrue(op_1 != op_2)
 
     @staticmethod
-    def create_lines() -> []:
+    def create_lines() -> list:
         """Создание линий."""
         line = bmg.LineF.create_2(100.0, 100.0, 200.0, 200.0)
         return [line] * 10

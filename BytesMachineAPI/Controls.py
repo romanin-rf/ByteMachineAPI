@@ -11,7 +11,7 @@ __version__ = "0.9122"
 
 
 import unittest
-import byte_machine_paint as bmp
+import Paint as bmp
 
 
 class Button(object):
@@ -25,9 +25,13 @@ class Button(object):
         self.border_color = bmp.bmg.Color.get_black()
         self.click_handler = None
 
-    def init(self, rect: bmp.bmg.Rect, text: bmp.bmg.String,
-             color: bmp.bmg.Color = bmp.bmg.Color.get_white(),
-             border_color: bmp.bmg.Color = bmp.bmg.Color.get_black()) -> None:
+    def init(
+        self,
+        rect: bmp.bmg.Rect,
+        text: bmp.bmg.String,
+        color: bmp.bmg.Color=bmp.bmg.Color.get_white(),
+        border_color: bmp.bmg.Color=bmp.bmg.Color.get_black()
+    ) -> None:
         """Функция инициализации."""
         assert isinstance(rect, bmp.bmg.Rect)
         assert isinstance(text, bmp.bmg.String)
@@ -38,9 +42,12 @@ class Button(object):
         self.color = color
         self.border_color = border_color
 
-    def create(rect: bmp.bmg.Rect, text: bmp.bmg.String,
-               color: bmp.bmg.Color = bmp.bmg.Color.get_white(),
-               borderColor: bmp.bmg.Color = bmp.bmg.Color.get_black()) -> Button:
+    def create(
+        rect: bmp.bmg.Rect,
+        text: bmp.bmg.String,
+        color: bmp.bmg.Color=bmp.bmg.Color.get_white(),
+        borderColor: bmp.bmg.Color=bmp.bmg.Color.get_black()
+    ) -> Button:
         """Функция создания."""
         btn = Button()
         btn.init(rect, text, color, borderColor)

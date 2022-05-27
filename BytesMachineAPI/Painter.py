@@ -8,7 +8,8 @@ __version__ = "0.9122"
 
 
 import unittest
-import byte_machine_paint as bmp
+import Paint as bmp
+import Graphics as bmg
 
 
 class Painter:
@@ -202,8 +203,13 @@ class Painter:
         op = bmp.DrawRectfOp.create2(left_top, size)
         self.ops.append(op)
 
-    def draw_rectf_3(self, left: float, top: float, width: float,
-                     height: float) -> None:
+    def draw_rectf_3(
+        self,
+        left: float,
+        top: float,
+        width: float,
+        height: float
+    ) -> None:
         """Вывод прямоугольника с дробными координатами 3."""
         assert isinstance(left, float)
         assert isinstance(top, float)
@@ -212,10 +218,13 @@ class Painter:
         op = bmp.DrawRectfOp.create2(left, top, width, height)
         self.ops.append(op)
 
-    def draw_rectsf(self, rects: list) -> None:
+    def draw_rectsf(
+        self,
+        rects: list
+    ) -> None:
         """Вывод прямоугольников с дробными координатами."""
         assert isinstance(rects, list)
-        op = DrawRectsfOp.create(rects)
+        op = bmp.DrawRectsfOp.create(rects)
         self.ops.append(op)
 
     def draw_round_rect(self, rect: bmp.bmg.RoundRect) -> None:
@@ -273,6 +282,7 @@ class Painter:
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         return draw_ops_to_byte_array(self.ops)
+        # ! Функция не написана
 
     def from_byte_array(self, byte_array: bytearray) -> None:
         """Инициализация из массива байтов."""

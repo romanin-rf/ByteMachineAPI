@@ -7,15 +7,17 @@ __author__ = "EnergyLabs"
 __version__ = "0.9133"
 
 
-import byte_machine_paint_helper as bmph
+import PaintHelper as bmph
 
 
 with open("F:/paint_ops.bin", "wb") as f:
     ba = bytearray()
 
     path = "C:/Users/pimen/Pictures/pribor.png"
-    align = bmph.bmp.AlignFlags.create(bmph.bmp.HorzAlignFlags.CENTER,
-                                       bmph.bmp.VertAlignFlags.CENTER)
+    align = bmph.bmp.AlignFlags.create(
+        bmph.bmp.HorzAlignFlags.CENTER,
+        bmph.bmp.VertAlignFlags.CENTER
+    )
     for i in range(20):
         for j in range(20):
             # Координаты
