@@ -14,6 +14,7 @@ __email__ = "energy.labs@yandex.ru"
 import unittest
 import Helper as bmh
 import Graphics as bmg
+import Units
 
 
 class DrawOpCodes:
@@ -22,81 +23,81 @@ class DrawOpCodes:
     @staticmethod
     def code_to_str(code: int) -> str:
         """Конвертация кода в строку."""
-        if code == DrawOpCodes.SAVE_STATE:
+        if code == Units.SAVE_STATE:
             return "SAVE_STATE"
-        elif code == DrawOpCodes.RESTORE_STATE:
+        elif code == Units.RESTORE_STATE:
             return "RESTORE_STATE"
-        elif code == DrawOpCodes.SET_CLIP_RECT:
+        elif code == Units.SET_CLIP_RECT:
             return "SET_CLIP_RECT"
-        elif code == DrawOpCodes.TRANSFORM_TRANSLATE:
+        elif code == Units.TRANSFORM_TRANSLATE:
             return "TRANSFORM_TRANSLATE"
-        elif code == DrawOpCodes.TRANSFORM_ROTATE:
+        elif code == Units.TRANSFORM_ROTATE:
             return "TRANSFORM_ROTATE"
-        elif code == DrawOpCodes.TRANSFORM_SCALE:
+        elif code == Units.TRANSFORM_SCALE:
             return "TRANSFORM_SCALE"
-        elif code == DrawOpCodes.SET_PEN:
+        elif code == Units.SET_PEN:
             return "SET_PEN"
-        elif code == DrawOpCodes.SET_BRUSH:
+        elif code == Units.SET_BRUSH:
             return "SET_BRUSH"
-        elif code == DrawOpCodes.SET_FONT:
+        elif code == Units.SET_FONT:
             return "SET_FONT"
-        elif code == DrawOpCodes.SET_ANTIALIASING:
+        elif code == Units.SET_ANTIALIASING:
             return "SET_ANTIALIASING"
-        elif code == DrawOpCodes.DRAW_POINT:
+        elif code == Units.DRAW_POINT:
             return "DRAW_POINT"
-        elif code == DrawOpCodes.DRAW_POINTS:
+        elif code == Units.DRAW_POINTS:
             return "DRAW_POINTS"
-        elif code == DrawOpCodes.DRAW_POINTF:
+        elif code == Units.DRAW_POINTF:
             return "DRAW_POINTF"
-        elif code == DrawOpCodes.DRAW_POINTSF:
+        elif code == Units.DRAW_POINTSF:
             return "DRAW_POINTSF"
-        elif code == DrawOpCodes.DRAW_LINE:
+        elif code == Units.DRAW_LINE:
             return "DRAW_LINE"
-        elif code == DrawOpCodes.DRAW_LINES:
+        elif code == Units.DRAW_LINES:
             return "DRAW_LINES"
-        elif code == DrawOpCodes.DRAW_LINESF:
+        elif code == Units.DRAW_LINESF:
             return "DRAW_LINESF"
-        elif code == DrawOpCodes.DRAW_LINESF:
+        elif code == Units.DRAW_LINESF:
             return "DRAW_LINESF"
-        elif code == DrawOpCodes.DRAW_POLYLINE:
+        elif code == Units.DRAW_POLYLINE:
             return "DRAW_POLYLINE"
-        elif code == DrawOpCodes.DRAW_POLYLINEF:
+        elif code == Units.DRAW_POLYLINEF:
             return "DRAW_POLYLINEF"
-        elif code == DrawOpCodes.DRAW_ARC:
+        elif code == Units.DRAW_ARC:
             return "DRAW_ARC"
-        elif code == DrawOpCodes.DRAW_ARCF:
+        elif code == Units.DRAW_ARCF:
             return "DRAW_ARCF"
-        elif code == DrawOpCodes.DRAW_RECT:
+        elif code == Units.DRAW_RECT:
             return "DRAW_RECT"
-        elif code == DrawOpCodes.DRAW_RECTS:
+        elif code == Units.DRAW_RECTS:
             return "DRAW_RECTS"
-        elif code == DrawOpCodes.DRAW_RECTF:
+        elif code == Units.DRAW_RECTF:
             return "DRAW_RECTF"
-        elif code == DrawOpCodes.DRAW_RECTSF:
+        elif code == Units.DRAW_RECTSF:
             return "DRAW_RECTSF"
-        elif code == DrawOpCodes.DRAW_ROUND_RECT:
+        elif code == Units.DRAW_ROUND_RECT:
             return "DRAW_ROUND_RECT"
-        elif code == DrawOpCodes.DRAW_ROUND_RECTS:
+        elif code == Units.DRAW_ROUND_RECTS:
             return "DRAW_ROUND_RECTS"
-        elif code == DrawOpCodes.DRAW_ROUND_RECTF:
+        elif code == Units.DRAW_ROUND_RECTF:
             return "DRAW_ROUND_RECTF"
-        elif code == DrawOpCodes.DRAW_ROUND_RECTSF:
+        elif code == Units.DRAW_ROUND_RECTSF:
             return "DRAW_ROUND_RECTSF"
-        elif code == DrawOpCodes.DRAW_ELLIPSE:
+        elif code == Units.DRAW_ELLIPSE:
             return "DRAW_ELLIPSE"
-        elif code == DrawOpCodes.DRAW_ELLIPSES:
+        elif code == Units.DRAW_ELLIPSES:
             return "DRAW_ELLIPSES"
-        elif code == DrawOpCodes.DRAW_ELLIPSEF:
+        elif code == Units.DRAW_ELLIPSEF:
             return "DRAW_ELLIPSEF"
-        elif code == DrawOpCodes.DRAW_ELLIPSESF:
+        elif code == Units.DRAW_ELLIPSESF:
             return "DRAW_ELLIPSESF"
-        elif code == DrawOpCodes.DRAW_POLYGON:
+        elif code == Units.DRAW_POLYGON:
             return "DRAW_POLYGON"
-        elif code == DrawOpCodes.DRAW_POLYGONF:
+        elif code == Units.DRAW_POLYGONF:
             return "DRAW_POLYGONF"
-        elif code == DrawOpCodes.DRAW_IMAGE:
+        elif code == Units.DRAW_IMAGE:
             return "DRAW_IMAGE"
-        elif code == DrawOpCodes.DRAW_TEXT:
+        elif code == Units.DRAW_TEXT:
             return "DRAW_TEXT"
         else:
             return "UNKNOWN"
@@ -105,125 +106,125 @@ class DrawOpCodes:
     def str_to_code(s: str) -> int:
         """Конвертация строки в код."""
         if s == "SAVE_STATE":
-            return DrawOpCodes.SAVE_STATE
+            return Units.SAVE_STATE
         elif s == "RESTORE_STATE":
-            return DrawOpCodes.RESTORE_STATE
+            return Units.RESTORE_STATE
         elif s == "SET_CLIP_RECT":
-            return DrawOpCodes.SET_CLIP_RECT
+            return Units.SET_CLIP_RECT
         elif s == "TRANSFORM_TRANSLATE":
-            return DrawOpCodes.TRANSFORM_TRANSLATE
+            return Units.TRANSFORM_TRANSLATE
         elif s == "TRANSFORM_ROTATE":
-            return DrawOpCodes.TRANSFORM_ROTATE
+            return Units.TRANSFORM_ROTATE
         elif s == "TRANSFORM_SCALE":
-            return DrawOpCodes.TRANSFORM_SCALE
+            return Units.TRANSFORM_SCALE
         elif s == "SET_PEN":
-            return DrawOpCodes.SET_PEN
+            return Units.SET_PEN
         elif s == "SET_BRUSH":
-            return DrawOpCodes.SET_BRUSH
+            return Units.SET_BRUSH
         elif s == "SET_FONT":
-            return DrawOpCodes.SET_FONT
+            return Units.SET_FONT
         elif s == "SET_ANTIALIASING":
-            return DrawOpCodes.SET_ANTIALIASING
+            return Units.SET_ANTIALIASING
         elif s == "DRAW_POINT":
-            return DrawOpCodes.DRAW_POINT
+            return Units.DRAW_POINT
         elif s == "DRAW_POINTS":
-            return DrawOpCodes.DRAW_POINTS
+            return Units.DRAW_POINTS
         elif s == "DRAW_POINTF":
-            return DrawOpCodes.DRAW_POINTF
+            return Units.DRAW_POINTF
         elif s == "DRAW_POINTSF":
-            return DrawOpCodes.DRAW_POINTSF
+            return Units.DRAW_POINTSF
         elif s == "DRAW_LINE":
-            return DrawOpCodes.DRAW_LINE
+            return Units.DRAW_LINE
         elif s == "DRAW_LINES":
-            return DrawOpCodes.DRAW_LINES
+            return Units.DRAW_LINES
         elif s == "DRAW_LINEF":
-            return DrawOpCodes.DRAW_LINEF
+            return Units.DRAW_LINEF
         elif s == "DRAW_LINESF":
-            return DrawOpCodes.DRAW_LINESF
+            return Units.DRAW_LINESF
         elif s == "DRAW_POLYLINE":
-            return DrawOpCodes.DRAW_POLYLINE
+            return Units.DRAW_POLYLINE
         elif s == "DRAW_POLYLINEF":
-            return DrawOpCodes.DRAW_POLYLINEF
+            return Units.DRAW_POLYLINEF
         elif s == "DRAW_ARC":
-            return DrawOpCodes.DRAW_ARC
+            return Units.DRAW_ARC
         elif s == "DRAW_ARCF":
-            return DrawOpCodes.DRAW_ARCF
+            return Units.DRAW_ARCF
         elif s == "DRAW_RECT":
-            return DrawOpCodes.DRAW_RECT
+            return Units.DRAW_RECT
         elif s == "DRAW_RECTS":
-            return DrawOpCodes.DRAW_RECTS
+            return Units.DRAW_RECTS
         elif s == "DRAW_RECTF":
-            return DrawOpCodes.DRAW_RECTF
+            return Units.DRAW_RECTF
         elif s == "DRAW_RECTS":
-            return DrawOpCodes.DRAW_RECTS
+            return Units.DRAW_RECTS
         elif s == "DRAW_ROUND_RECT":
-            return DrawOpCodes.DRAW_ROUND_RECT
+            return Units.DRAW_ROUND_RECT
         elif s == "DRAW_ROUND_RECTS":
-            return DrawOpCodes.DRAW_ROUND_RECTS
+            return Units.DRAW_ROUND_RECTS
         elif s == "DRAW_ROUND_RECTF":
-            return DrawOpCodes.DRAW_ROUND_RECTF
+            return Units.DRAW_ROUND_RECTF
         elif s == "DRAW_ROUND_RECTSF":
-            return DrawOpCodes.DRAW_ROUND_RECTSF
+            return Units.DRAW_ROUND_RECTSF
         elif s == "DRAW_ELLIPSE":
-            return DrawOpCodes.DRAW_ELLIPSE
+            return Units.DRAW_ELLIPSE
         elif s == "DRAW_ELLIPSES":
-            return DrawOpCodes.DRAW_ELLIPSES
+            return Units.DRAW_ELLIPSES
         elif s == "DRAW_ELLIPSEF":
-            return DrawOpCodes.DRAW_ELLIPSEF
+            return Units.DRAW_ELLIPSEF
         elif s == "DRAW_ELLIPSESF":
-            return DrawOpCodes.DRAW_ELLIPSESF
+            return Units.DRAW_ELLIPSESF
         elif s == "DRAW_POLYGON":
-            return DrawOpCodes.DRAW_POLYGON
+            return Units.DRAW_POLYGON
         elif s == "DRAW_POLYGONF":
-            return DrawOpCodes.DRAW_POLYGONF
+            return Units.DRAW_POLYGONF
         elif s == "DRAW_IMAGE":
-            return DrawOpCodes.DRAW_IMAGE
+            return Units.DRAW_IMAGE
         elif s == "DRAW_TEXT":
-            return DrawOpCodes.DRAW_TEXT
+            return Units.DRAW_TEXT
         else:
-            return DrawOpCodes.UNKNOWN
+            return Units.UNKNOWN
 
     @staticmethod
     def get_values() -> tuple:
         """Получение набора значений в виде кортежа."""
-        return (DrawOpCodes.UNKNOWN,
-                DrawOpCodes.RESTORE_STATE,
-                DrawOpCodes.SET_CLIP_RECT,
-                DrawOpCodes.TRANSFORM_TRANSLATE,
-                DrawOpCodes.TRANSFORM_ROTATE,
-                DrawOpCodes.TRANSFORM_SCALE,
-                DrawOpCodes.SET_PEN,
-                DrawOpCodes.SET_BRUSH,
-                DrawOpCodes.SET_FONT,
-                DrawOpCodes.SET_ANTIALIASING,
-                DrawOpCodes.DRAW_POINT,
-                DrawOpCodes.DRAW_POINTS,
-                DrawOpCodes.DRAW_POINTF,
-                DrawOpCodes.DRAW_POINTSF,
-                DrawOpCodes.DRAW_LINE,
-                DrawOpCodes.DRAW_LINES,
-                DrawOpCodes.DRAW_LINEF,
-                DrawOpCodes.DRAW_LINESF,
-                DrawOpCodes.DRAW_POLYLINE,
-                DrawOpCodes.DRAW_POLYLINEF,
-                DrawOpCodes.DRAW_ARC,
-                DrawOpCodes.DRAW_ARCF,
-                DrawOpCodes.DRAW_RECT,
-                DrawOpCodes.DRAW_RECTS,
-                DrawOpCodes.DRAW_RECTF,
-                DrawOpCodes.DRAW_RECTSF,
-                DrawOpCodes.DRAW_ROUND_RECT,
-                DrawOpCodes.DRAW_ROUND_RECTS,
-                DrawOpCodes.DRAW_ROUND_RECTF,
-                DrawOpCodes.DRAW_ROUND_RECTSF,
-                DrawOpCodes.DRAW_ELLIPSE,
-                DrawOpCodes.DRAW_ELLIPSES,
-                DrawOpCodes.DRAW_ELLIPSEF,
-                DrawOpCodes.DRAW_ELLIPSESF,
-                DrawOpCodes.DRAW_POLYGON,
-                DrawOpCodes.DRAW_POLYGONF,
-                DrawOpCodes.DRAW_IMAGE,
-                DrawOpCodes.DRAW_TEXT)
+        return (Units.UNKNOWN,
+                Units.RESTORE_STATE,
+                Units.SET_CLIP_RECT,
+                Units.TRANSFORM_TRANSLATE,
+                Units.TRANSFORM_ROTATE,
+                Units.TRANSFORM_SCALE,
+                Units.SET_PEN,
+                Units.SET_BRUSH,
+                Units.SET_FONT,
+                Units.SET_ANTIALIASING,
+                Units.DRAW_POINT,
+                Units.DRAW_POINTS,
+                Units.DRAW_POINTF,
+                Units.DRAW_POINTSF,
+                Units.DRAW_LINE,
+                Units.DRAW_LINES,
+                Units.DRAW_LINEF,
+                Units.DRAW_LINESF,
+                Units.DRAW_POLYLINE,
+                Units.DRAW_POLYLINEF,
+                Units.DRAW_ARC,
+                Units.DRAW_ARCF,
+                Units.DRAW_RECT,
+                Units.DRAW_RECTS,
+                Units.DRAW_RECTF,
+                Units.DRAW_RECTSF,
+                Units.DRAW_ROUND_RECT,
+                Units.DRAW_ROUND_RECTS,
+                Units.DRAW_ROUND_RECTF,
+                Units.DRAW_ROUND_RECTSF,
+                Units.DRAW_ELLIPSE,
+                Units.DRAW_ELLIPSES,
+                Units.DRAW_ELLIPSEF,
+                Units.DRAW_ELLIPSESF,
+                Units.DRAW_POLYGON,
+                Units.DRAW_POLYGONF,
+                Units.DRAW_IMAGE,
+                Units.DRAW_TEXT)
 
     @staticmethod
     def is_correct_value(value: int) -> bool:
@@ -235,46 +236,6 @@ class DrawOpCodes:
     def get_count() -> int:
         """Получение количества значений."""
         return 38
-
-    UNKNOWN = -1
-    SAVE_STATE = 0
-    RESTORE_STATE = 1
-    SET_CLIP_RECT = 2
-    TRANSFORM_TRANSLATE = 3
-    TRANSFORM_ROTATE = 4
-    TRANSFORM_SCALE = 5
-    SET_PEN = 6
-    SET_BRUSH = 7
-    SET_FONT = 8
-    SET_ANTIALIASING = 9
-    DRAW_POINT = 10
-    DRAW_POINTS = 11
-    DRAW_POINTF = 12
-    DRAW_POINTSF = 13
-    DRAW_LINE = 14
-    DRAW_LINES = 15
-    DRAW_LINEF = 16
-    DRAW_LINESF = 17
-    DRAW_POLYLINE = 18
-    DRAW_POLYLINEF = 19
-    DRAW_ARC = 20
-    DRAW_ARCF = 21
-    DRAW_RECT = 22
-    DRAW_RECTS = 23
-    DRAW_RECTF = 24
-    DRAW_RECTSF = 25
-    DRAW_ROUND_RECT = 26
-    DRAW_ROUND_RECTS = 27
-    DRAW_ROUND_RECTF = 28
-    DRAW_ROUND_RECTSF = 29
-    DRAW_ELLIPSE = 30
-    DRAW_ELLIPSES = 31
-    DRAW_ELLIPSEF = 32
-    DRAW_ELLIPSESF = 33
-    DRAW_POLYGON = 34
-    DRAW_POLYGONF = 35
-    DRAW_IMAGE = 36
-    DRAW_TEXT = 37
 
 
 class HorzAlignFlags:
@@ -455,14 +416,14 @@ class SaveStateOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.SAVE_STATE:
+        if get_op_code(byte_array) != Units.SAVE_STATE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SAVE_STATE)
+        ba += bmg.bmc.int16_to_byte_array(Units.SAVE_STATE)
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
 
@@ -499,14 +460,14 @@ class RestoreStateOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.RESTORE_STATE:
+        if get_op_code(byte_array) != Units.RESTORE_STATE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.RESTORE_STATE)
+        ba += bmg.bmc.int16_to_byte_array(Units.RESTORE_STATE)
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
 
@@ -560,14 +521,14 @@ class SetClipRectOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.SET_CLIP_RECT:
+        if get_op_code(byte_array) != Units.SET_CLIP_RECT:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SET_CLIP_RECT)
+        ba += bmg.bmc.int16_to_byte_array(Units.SET_CLIP_RECT)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -632,14 +593,14 @@ class TransformTranslateOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.TRANSFORM_TRANSLATE:
+        if get_op_code(byte_array) != Units.TRANSFORM_TRANSLATE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.TRANSFORM_TRANSLATE)
+        ba += bmg.bmc.int16_to_byte_array(Units.TRANSFORM_TRANSLATE)
         ba += bmg.bmc.double_to_byte_array(self.x)
         ba += bmg.bmc.double_to_byte_array(self.y)
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
@@ -705,14 +666,14 @@ class TransformRotateOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.TRANSFORM_ROTATE:
+        if get_op_code(byte_array) != Units.TRANSFORM_ROTATE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.TRANSFORM_ROTATE)
+        ba += bmg.bmc.int16_to_byte_array(Units.TRANSFORM_ROTATE)
         ba += bmg.bmc.double_to_byte_array(self.angle)
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -777,14 +738,14 @@ class TransformScaleOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.TRANSFORM_SCALE:
+        if get_op_code(byte_array) != Units.TRANSFORM_SCALE:
             return False
         return True
 
     def to_byte_array(self):
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.TRANSFORM_SCALE)
+        ba += bmg.bmc.int16_to_byte_array(Units.TRANSFORM_SCALE)
         ba += bmg.bmc.double_to_byte_array(self.x)
         ba += bmg.bmc.double_to_byte_array(self.y)
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
@@ -850,14 +811,14 @@ class SetAntialiasingOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.SET_ANTIALIASING:
+        if get_op_code(byte_array) != Units.SET_ANTIALIASING:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SET_ANTIALIASING)
+        ba += bmg.bmc.int16_to_byte_array(Units.SET_ANTIALIASING)
         ba += bmg.bmc.bool_to_byte_array(self.antialiasing)
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -918,14 +879,14 @@ class SetPenOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.SET_PEN:
+        if get_op_code(byte_array) != Units.SET_PEN:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SET_PEN)
+        ba += bmg.bmc.int16_to_byte_array(Units.SET_PEN)
         ba += self.pen.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -986,14 +947,14 @@ class SetBrushOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.SET_BRUSH:
+        if get_op_code(byte_array) != Units.SET_BRUSH:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SET_BRUSH)
+        ba += bmg.bmc.int16_to_byte_array(Units.SET_BRUSH)
         ba += self.brush.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1053,14 +1014,14 @@ class SetFontOp:
             return False
         if len(byte_array) < 2:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.SET_FONT:
+        if get_op_code(byte_array) != Units.SET_FONT:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SET_FONT)
+        ba += bmg.bmc.int16_to_byte_array(Units.SET_FONT)
         ba += self.font.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1131,14 +1092,14 @@ class DrawPointOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POINT:
+        if get_op_code(byte_array) != Units.DRAW_POINT:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POINT)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POINT)
         ba += self.point.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1211,14 +1172,14 @@ class DrawPointsOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POINTS:
+        if get_op_code(byte_array) != Units.DRAW_POINTS:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POINTS)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POINTS)
         ba += bmg.bmc.int32_to_byte_array(self.get_point_count())
         for p in self.points:
             ba += p.to_byte_array()
@@ -1309,14 +1270,14 @@ class DrawPointfOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POINTF:
+        if get_op_code(byte_array) != Units.DRAW_POINTF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POINTF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POINTF)
         ba += self.point.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1388,14 +1349,14 @@ class DrawPointsfOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POINTSF:
+        if get_op_code(byte_array) != Units.DRAW_POINTSF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POINTSF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POINTSF)
         ba += bmg.bmc.int32_to_byte_array(self.get_point_count())
         for p in self.points:
             ba += p.to_byte_array()
@@ -1509,14 +1470,14 @@ class DrawLineOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_LINE:
+        if get_op_code(byte_array) != Units.DRAW_LINE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_LINE)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_LINE)
         ba += self.line.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1588,14 +1549,14 @@ class DrawLinesOp:
             return False
         if len(byte_array) < 6:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_LINES:
+        if get_op_code(byte_array) != Units.DRAW_LINES:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_LINES)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_LINES)
         ba += bmg.bmc.int32_to_byte_array(self.get_line_count())
         for line in self.lines:
             ba += line.to_byte_array()
@@ -1711,14 +1672,14 @@ class DrawLinefOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_LINEF:
+        if get_op_code(byte_array) != Units.DRAW_LINEF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_LINEF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_LINEF)
         ba += self.line.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1791,14 +1752,14 @@ class DrawLinesfOp:
             return False
         if len(byte_array) < 6:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_LINESF:
+        if get_op_code(byte_array) != Units.DRAW_LINESF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_LINESF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_LINESF)
         ba += bmg.bmc.int32_to_byte_array(self.get_line_count())
         for line in self.lines:
             ba += line.to_byte_array()
@@ -1891,14 +1852,14 @@ class DrawPolylineOp:
             return False
         if len(byte_array) < 6:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POLYLINE:
+        if get_op_code(byte_array) != Units.DRAW_POLYLINE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POLYLINE)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POLYLINE)
         ba += self.polyline.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -1970,14 +1931,14 @@ class DrawPolylinefOp:
             return False
         if len(byte_array) < 6:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POLYLINE:
+        if get_op_code(byte_array) != Units.DRAW_POLYLINE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POLYLINEF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POLYLINEF)
         ba += self.polyline.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -2042,14 +2003,14 @@ class DrawArcOp:
             return False
         if len(byte_array) < 24:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ARC:
+        if get_op_code(byte_array) != Units.DRAW_ARC:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массив байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ARC)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ARC)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.int32_to_byte_array(self.start_angle)
         ba += bmg.bmc.int32_to_byte_array(self.span_angle)
@@ -2122,14 +2083,14 @@ class DrawArcfOp:
             return False
         if len(byte_array) < 40:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ARCF:
+        if get_op_code(byte_array) != Units.DRAW_ARCF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = []
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ARCF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ARCF)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.int32_to_byte_array(self.startAngle)
         ba += bmg.bmc.int32_to_byte_array(self.spanAngle)
@@ -2196,14 +2157,14 @@ class DrawRectOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_RECT:
+        if get_op_code(byte_array) != Units.DRAW_RECT:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_RECT)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_RECT)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -2272,14 +2233,14 @@ class DrawRectsOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_RECTS:
+        if get_op_code(byte_array) != Units.DRAW_RECTS:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_RECTS)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_RECTS)
         ba += bmg.bmc.int32_to_byte_array(self.get_rect_count())
         for rect in self.rects:
             ba += rect.to_byte_array()
@@ -2361,14 +2322,14 @@ class DrawRectfOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_RECTF:
+        if get_op_code(byte_array) != Units.DRAW_RECTF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_RECTF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_RECTF)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -2440,14 +2401,14 @@ class DrawRectsfOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_RECTSF:
+        if get_op_code(byte_array) != Units.DRAW_RECTSF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_RECTSF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_RECTSF)
         ba += bmg.bmc.int32_to_byte_array(self.get_rect_count())
         for rect in self.rects:
             ba += rect.to_byte_array()
@@ -2529,14 +2490,14 @@ class DrawEllipseOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ELLIPSE:
+        if get_op_code(byte_array) != Units.DRAW_ELLIPSE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ELLIPSE)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ELLIPSE)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -2609,14 +2570,14 @@ class DrawEllipsesOp:
             return False
         if len(byte_array) < 7:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ELLIPSES:
+        if get_op_code(byte_array) != Units.DRAW_ELLIPSES:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ELLIPSES)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ELLIPSES)
         ba += bmg.bmc.int32_to_byte_array(self.get_rect_count())
         for r in self.rects:
             ba += r.to_byte_array()
@@ -2698,14 +2659,14 @@ class DrawEllipsefOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ELLIPSEF:
+        if get_op_code(byte_array) != Units.DRAW_ELLIPSEF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ELLIPSEF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ELLIPSEF)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -2778,14 +2739,14 @@ class DrawEllipsesfOp:
             return False
         if len(byte_array) < 7:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ELLIPSESF:
+        if get_op_code(byte_array) != Units.DRAW_ELLIPSESF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ELLIPSESF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ELLIPSESF)
         ba += bmg.bmc.int32_to_byte_array(self.get_rect_count())
         for rect in self.rects:
             ba += rect.to_byte_array()
@@ -2865,14 +2826,14 @@ class DrawRoundRectOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ROUND_RECT:
+        if get_op_code(byte_array) != Units.DRAW_ROUND_RECT:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ROUND_RECT)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ROUND_RECT)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -2944,14 +2905,14 @@ class DrawRoundRectsOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ROUND_RECTS:
+        if get_op_code(byte_array) != Units.DRAW_ROUND_RECTS:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ROUND_RECTS)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ROUND_RECTS)
         ba += bmg.bmc.int32_to_byte_array(self.get_rect_count())
         for rect in self.rects:
             ba += rect.to_byte_array()
@@ -3032,14 +2993,14 @@ class DrawRoundRectfOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ROUND_RECTF:
+        if get_op_code(byte_array) != Units.DRAW_ROUND_RECTF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ROUND_RECTF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ROUND_RECTF)
         ba += self.rect.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -3112,14 +3073,14 @@ class DrawRoundRectsfOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_ROUND_RECTSF:
+        if get_op_code(byte_array) != Units.DRAW_ROUND_RECTSF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_ROUND_RECTSF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_ROUND_RECTSF)
         ba += bmg.bmc.int32_to_byte_array(self.get_rect_count())
         for rect in self.rects:
             ba += rect.to_byte_array()
@@ -3212,14 +3173,14 @@ class DrawPolygonOp:
             return False
         if len(byte_array) < 6:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POLYGON:
+        if get_op_code(byte_array) != Units.DRAW_POLYGON:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POLYGON)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POLYGON)
         ba += self.polygon.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -3291,14 +3252,14 @@ class DrawPolygonfOp:
             return False
         if len(byte_array) < 6:
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_POLYGONF:
+        if get_op_code(byte_array) != Units.DRAW_POLYGONF:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_POLYGONF)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_POLYGONF)
         ba += self.polygon.to_byte_array()
         ba += bmg.bmc.uint8_to_byte_array(0)  # резерв
         return ba
@@ -3378,14 +3339,14 @@ class DrawImageOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_IMAGE:
+        if get_op_code(byte_array) != Units.DRAW_IMAGE:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде списка байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_IMAGE)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_IMAGE)
         ba += self.path.to_byte_array()
         ba += self.point.to_byte_array()
         ba += self.align.to_byte_array()
@@ -3495,14 +3456,14 @@ class DrawTextOp:
             return False
         if len(byte_array) < self.get_byte_array_len():
             return False
-        if get_op_code(byte_array) != DrawOpCodes.DRAW_TEXT:
+        if get_op_code(byte_array) != Units.DRAW_TEXT:
             return False
         return True
 
     def to_byte_array(self) -> bytearray:
         """Получение в виде массива байтов."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.DRAW_TEXT)
+        ba += bmg.bmc.int16_to_byte_array(Units.DRAW_TEXT)
         ba += self.text.to_byte_array()
         ba += self.point.to_byte_array()
         ba += self.align.to_byte_array()
@@ -3589,81 +3550,81 @@ def byte_array_to_op_list(byte_array: bytearray) -> list:
 
 def create_op(code: int):
     """Создание операции по ее коду."""
-    if code == DrawOpCodes.SAVE_STATE:
+    if code == Units.SAVE_STATE:
         return SaveStateOp()
-    elif code == DrawOpCodes.RESTORE_STATE:
+    elif code == Units.RESTORE_STATE:
         return RestoreStateOp()
-    elif code == DrawOpCodes.SET_CLIP_RECT:
+    elif code == Units.SET_CLIP_RECT:
         return SetClipRectOp()
-    elif code == DrawOpCodes.TRANSFORM_TRANSLATE:
+    elif code == Units.TRANSFORM_TRANSLATE:
         return TransformTranslateOp()
-    elif code == DrawOpCodes.TRANSFORM_ROTATE:
+    elif code == Units.TRANSFORM_ROTATE:
         return TransformRotateOp()
-    elif code == DrawOpCodes.TRANSFORM_SCALE:
+    elif code == Units.TRANSFORM_SCALE:
         return TransformScaleOp()
-    elif code == DrawOpCodes.SET_PEN:
+    elif code == Units.SET_PEN:
         return SetPenOp()
-    elif code == DrawOpCodes.SET_BRUSH:
+    elif code == Units.SET_BRUSH:
         return SetBrushOp()
-    elif code == DrawOpCodes.SET_FONT:
+    elif code == Units.SET_FONT:
         return SetFontOp()
-    elif code == DrawOpCodes.SET_ANTIALIASING:
+    elif code == Units.SET_ANTIALIASING:
         return SetAntialiasingOp()
-    elif code == DrawOpCodes.DRAW_POINT:
+    elif code == Units.DRAW_POINT:
         return DrawPointOp()
-    elif code == DrawOpCodes.DRAW_POINTS:
+    elif code == Units.DRAW_POINTS:
         return DrawPointsOp()
-    elif code == DrawOpCodes.DRAW_POINTF:
+    elif code == Units.DRAW_POINTF:
         return DrawPointfOp
-    elif code == DrawOpCodes.DRAW_POINTSF:
+    elif code == Units.DRAW_POINTSF:
         return DrawPointsfOp()
-    elif code == DrawOpCodes.DRAW_LINE:
+    elif code == Units.DRAW_LINE:
         return DrawLineOp()
-    elif code == DrawOpCodes.DRAW_LINE:
+    elif code == Units.DRAW_LINE:
         return DrawLinesOp()
-    elif code == DrawOpCodes.DRAW_LINEF:
+    elif code == Units.DRAW_LINEF:
         return DrawLinefOp()
-    elif code == DrawOpCodes.DRAW_LINESF:
+    elif code == Units.DRAW_LINESF:
         return DrawLinesfOp()
-    elif code == DrawOpCodes.DRAW_POLYLINE:
+    elif code == Units.DRAW_POLYLINE:
         return DrawPolylineOp()
-    elif code == DrawOpCodes.DRAW_POLYLINEF:
+    elif code == Units.DRAW_POLYLINEF:
         return DrawPolylinefOp()
-    elif code == DrawOpCodes.DRAW_ARC:
+    elif code == Units.DRAW_ARC:
         return DrawArcOp()
-    elif code == DrawOpCodes.DRAW_ARCF:
+    elif code == Units.DRAW_ARCF:
         return DrawArcfOp()
-    elif code == DrawOpCodes.DRAW_RECT:
+    elif code == Units.DRAW_RECT:
         return DrawRectOp()
-    elif code == DrawOpCodes.DRAW_RECTS:
+    elif code == Units.DRAW_RECTS:
         return DrawRectsOp()
-    elif code == DrawOpCodes.DRAW_RECTF:
+    elif code == Units.DRAW_RECTF:
         return DrawRectfOp()
-    elif code == DrawOpCodes.DRAW_RECTSF:
+    elif code == Units.DRAW_RECTSF:
         return DrawRectsfOp()
-    elif code == DrawOpCodes.DRAW_ROUND_RECT:
+    elif code == Units.DRAW_ROUND_RECT:
         return DrawRoundRectOp()
-    elif code == DrawOpCodes.DRAW_ROUND_RECTS:
+    elif code == Units.DRAW_ROUND_RECTS:
         return DrawRoundRectsOp()
-    elif code == DrawOpCodes.DRAW_ROUND_RECTF:
+    elif code == Units.DRAW_ROUND_RECTF:
         return DrawRoundRectfOp()
-    elif code == DrawOpCodes.DRAW_ROUND_RECTSF:
+    elif code == Units.DRAW_ROUND_RECTSF:
         return DrawRoundRectsfOp()
-    elif code == DrawOpCodes.DRAW_ELLIPSE:
+    elif code == Units.DRAW_ELLIPSE:
         return DrawEllipseOp()
-    elif code == DrawOpCodes.DRAW_ELLIPSES:
+    elif code == Units.DRAW_ELLIPSES:
         return DrawEllipsesOp()
-    elif code == DrawOpCodes.DRAW_ELLIPSEF:
+    elif code == Units.DRAW_ELLIPSEF:
         return DrawEllipsefOp()
-    elif code == DrawOpCodes.DRAW_ELLIPSESF:
+    elif code == Units.DRAW_ELLIPSESF:
         return DrawEllipsesfOp()
-    elif code == DrawOpCodes.DRAW_POLYGON:
+    elif code == Units.DRAW_POLYGON:
         return DrawPolygonOp()
-    elif code == DrawOpCodes.DRAW_POLYGONF:
+    elif code == Units.DRAW_POLYGONF:
         return DrawPolygonfOp()
-    elif code == DrawOpCodes.DRAW_IMAGE:
+    elif code == Units.DRAW_IMAGE:
         return DrawImageOp()
-    elif code == DrawOpCodes.DRAW_TEXT:
+    elif code == Units.DRAW_TEXT:
         return DrawTextOp()
     else:
         raise Exception("Bad operation code")
@@ -3686,7 +3647,7 @@ def get_op_code(byte_array: bytearray) -> int:
     if 0 <= code < DrawOpCodes.get_count():
         return code
     else:
-        return DrawOpCodes.UNKNOWN
+        return Units.UNKNOWN
 
 
 class TestDrawOpCodes(unittest.TestCase):
@@ -3694,10 +3655,10 @@ class TestDrawOpCodes(unittest.TestCase):
 
     def test_code_to_str(self):
         """Тест функции code_to_str."""
-        code = DrawOpCodes.DRAW_POINT
+        code = Units.DRAW_POINT
         str_code = DrawOpCodes.code_to_str(code)
         self.assertEqual(str_code, "DRAW_POINT")
-        code = DrawOpCodes.SET_ANTIALIASING
+        code = Units.SET_ANTIALIASING
         str_code = DrawOpCodes.code_to_str(code)
         self.assertEqual(str_code, "SET_ANTIALIASING")
 
@@ -3705,10 +3666,10 @@ class TestDrawOpCodes(unittest.TestCase):
         """Тест функции str_to_code."""
         str_code = "DRAW_POINT"
         code = DrawOpCodes.str_to_code(str_code)
-        self.assertEqual(code, DrawOpCodes.DRAW_POINT)
+        self.assertEqual(code, Units.DRAW_POINT)
         str_code = "SET_ANTIALIASING"
         code = DrawOpCodes.str_to_code(str_code)
-        self.assertEqual(code, DrawOpCodes.SET_ANTIALIASING)
+        self.assertEqual(code, Units.SET_ANTIALIASING)
 
     def test_get_values(self):
         """Тест функции get_values."""
@@ -3716,9 +3677,9 @@ class TestDrawOpCodes(unittest.TestCase):
 
     def test_is_correct_value(self):
         """Тест функции is_correct_value."""
-        code = DrawOpCodes.DRAW_ARC
+        code = Units.DRAW_ARC
         self.assertTrue(DrawOpCodes.is_correct_value(code))
-        code = DrawOpCodes.DRAW_ELLIPSE
+        code = Units.DRAW_ELLIPSE
         self.assertTrue(DrawOpCodes.is_correct_value(code))
 
     def test_get_count(self):
@@ -3745,7 +3706,7 @@ class TestSaveStateOp(unittest.TestCase):
     def test_from_byte_list(self):
         """Тест функции to_byte_array."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.SAVE_STATE)
+        ba += bmg.bmc.int16_to_byte_array(Units.SAVE_STATE)
         ba += bmg.bmc.int8_to_byte_array(0)
         op = SaveStateOp()
         op.from_byte_array(ba)
@@ -3797,7 +3758,7 @@ class TestRestoreStateOp(unittest.TestCase):
     def test_from_byte_array(self):
         """Тест функции from_byte_array."""
         ba = bytearray()
-        ba += bmg.bmc.int16_to_byte_array(DrawOpCodes.RESTORE_STATE)
+        ba += bmg.bmc.int16_to_byte_array(Units.RESTORE_STATE)
         ba += bmg.bmc.int8_to_byte_array(0)
         op = RestoreStateOp()
         op.from_byte_array(ba)
@@ -6100,7 +6061,7 @@ class TestFuncs(unittest.TestCase):
 
     def test_create_op(self):
         """Тест функции create_op."""
-        op_code = DrawOpCodes.DRAW_ARC
+        op_code = Units.DRAW_ARC
         op = create_op(op_code)
         self.assertTrue(isinstance(op, DrawArcOp))
 
@@ -6113,7 +6074,7 @@ class TestFuncs(unittest.TestCase):
         op = DrawArcOp()
         ba = op.to_byte_array()
         op_code = get_op_code(ba)
-        self.assertEqual(op_code, DrawOpCodes.DRAW_ARC)
+        self.assertEqual(op_code, Units.DRAW_ARC)
 
 
 # Вызывается при загрузке модуля главным.
