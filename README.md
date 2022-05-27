@@ -1,1 +1,2 @@
-# byte_machine_python
+# ByteMachineAPI
+**ByteMachineAPI** - это API для внедерия Python в программу ByteMachine.
